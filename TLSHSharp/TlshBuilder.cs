@@ -59,6 +59,7 @@
  */
 
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Palit.TLSHSharp
@@ -133,6 +134,28 @@ namespace Palit.TLSHSharp
                     bytesRead = await s.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
                 }
             }
+        }
+
+        public void LoadFromStream(Stream input)
+        {
+	        var buffer = new byte[1024];
+            var bytesRead = input.Read(buffer, 0, buffer.Length);
+	        while (bytesRead > 0)
+	        {
+		        Update(buffer, 0, bytesRead);
+		        bytesRead = input.Read(buffer, 0, buffer.Length);
+	        }
+        }
+
+        public async Task LoadFromStreamAsync(Stream input)
+        {
+	        var buffer = new byte[1024];
+	        var bytesRead = await input.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+	        while (bytesRead > 0)
+	        {
+		        Update(buffer, 0, bytesRead);
+		        bytesRead = await input.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+	        }
         }
 
         public void Update(byte[] data)
