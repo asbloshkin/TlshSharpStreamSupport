@@ -5,9 +5,12 @@
     <RootNamespace>Palit.TLSHSharp</RootNamespace>
     <Authors>Morgan Abel</Authors>
     <Company>Palit, LLC</Company>
-    <Description>TLSH is a fuzzy matching library designed by Trend Micro. Given a byte stream with a minimum length of 256 characters (and a minimum amount of randomness), TLSH generates a hash value which can be used for similarity comparisons.</Description>
-    <RepositoryUrl>https://github.com/morganabel/TlshSharp</RepositoryUrl>
+    <Description>Version of TLSHSharp lib with added stream support.
+TLSH is a fuzzy matching library designed by Trend Micro. Given a byte stream with a minimum length of 256 characters (and a minimum amount of randomness), TLSH generates a hash value which can be used for similarity comparisons.</Description>
+    <RepositoryUrl>https://github.com/asbloshkin/TlshSharpStreamSupport</RepositoryUrl>
     <PackageTags>Tlsh, Locality Sensitive Hashing</PackageTags>
+    <PackageId>TLSHSharpStreamSupport</PackageId>
+    <PackageProjectUrl>https://github.com/asbloshkin/TlshSharpStreamSupport</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
