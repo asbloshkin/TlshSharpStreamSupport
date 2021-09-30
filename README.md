@@ -45,6 +45,14 @@ tlshBuilder.LoadFromString(data);
 // Or load it in async
 await tlshBuilder.LoadFromStringAsync(data);
 
+// Or load it from stream
+using (var stream = File.OpenRead("test.txt"))
+{
+	tlshBuilder.LoadFromStream(data);
+	// Or
+	await tlshBuilder.LoadFromStreamAsync(data);
+}
+
 // Builds TlshHash instance which can generate encoded output.
 var tlshHash = tlshBuilder.GetHash(false);
 
